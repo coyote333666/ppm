@@ -21,6 +21,25 @@ the path to access php.exe (for example, C:\xampp\php).
 run this command:
 
 ```bash
+$ sudo su postgres
+$ psql
+postgres$ CREATE DATABASE test
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1;
+postgres$ CREATE USER test WITH
+  LOGIN
+  NOSUPERUSER
+  INHERIT
+  NOCREATEDB
+  NOCREATEROLE
+  NOREPLICATION;
+postgres$ ALTER ROLE test with password 'test';
+postgres$ ALTER USER test with password 'test';
+postgres$ REVOKE ALL ON DATABASE test FROM public;
+postgres$ GRANT ALL ON DATABASE test TO test;        
+postgres$ exit
 $ git clone https://github.com/coyote333666/ppm ppm
 $ cd ppm/
 $ psql -f script.sql -U test
