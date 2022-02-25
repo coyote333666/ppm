@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * ppm - PHP page manager
+	 * pjp - PHP Jquery UI portal
 	 *
-	 * @see https://github.com/coyote333666/ppm The ppm GitHub project
+	 * @see https://github.com/coyote333666/pjp The pjp GitHub project
 	 *
 	 * @author    Vincent Fortier <coyote333666@gmail.com>
 	 * @copyright 2021 Vincent Fortier
@@ -17,6 +17,10 @@
 	define("FILE_FUNCTION"			, "function.php");
 	define("FILE_BODY"				, "body.php");
 	define("FILE_FOOTER"			, "footer.php");
+	define("S_FILE_PORTLET_01"		, "portlet_01.php");
+	define("S_FILE_PORTLET_02"		, "portlet_02.php");
+	define("S_FILE_PORTLET_03"		, "portlet_03.php");
+	define("S_FILE_PORTLET_UPDTE"	, "portlet_update.php");
 	define("PARAMETER_REDIRECTOR"	, "page=");
 	define("FILE_HEADER"			, "header.html");
 	define("PG_SERVER"				, "localhost");
@@ -24,19 +28,6 @@
 	define("PG_PASSWORD"			, "test");
 	define("PG_DATABASE"			, "test");
 	define("PG_PORT"				, "5432");						
-	define("LOAD_START"				, microtime(true));
-
-	$linesPerPage					= 5;
-	$currentPage					= 1;
-
-	if(isset($_GET["linesPerPage"]))	
-	{
-		$linesPerPage	= $_GET["linesPerPage"];
-	}
-	if(isset($_GET["currentPage"]))		
-	{
-		$currentPage 	= $_GET["currentPage"];
-	}
 
 	require_once(FILE_FUNCTION);
 
@@ -44,23 +35,8 @@
 
 	echo('</head>');
 	echo('<body>');
-
-	$query =
-	"SELECT *" . PHP_EOL . 
-	"FROM test"  . PHP_EOL;
-
-	if(isset($_GET["order"]))
-	{
-		$query .=	"ORDER BY " . $_GET["order"] ;
-	}	
-	else
-	{
-		$query .= "ORDER BY 1";
-	}
 	
 	require(FILE_BODY);
-
-	echo(fncDisplayTable($_GET, $recordset, 'test'));
 
 	require(FILE_FOOTER);
 	
