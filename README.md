@@ -40,6 +40,8 @@ postgres$ ALTER USER test with password 'test';
 postgres$ REVOKE ALL ON DATABASE test FROM public;
 postgres$ GRANT ALL ON DATABASE test TO test;        
 postgres$ exit
+$ sudo adduser test
+$ sudo su test
 $ git clone https://github.com/coyote333666/ppm ppm
 $ cd ppm/
 $ psql -f script.sql -U test
