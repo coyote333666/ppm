@@ -6,7 +6,7 @@ CREATE TABLE "public"."portlet" (
     "id" integer DEFAULT nextval('seq_portlet') NOT NULL
     ,"header" text
     ,"portlet_name" text
-    CONSTRAINT "portlet_pk" PRIMARY KEY ("id")
+    , CONSTRAINT "portlet_pk" PRIMARY KEY ("id")
 ) WITH (oids = false);
 
 INSERT INTO "portlet" ("header", "portlet_name") VALUES
