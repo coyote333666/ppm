@@ -14,7 +14,7 @@ Requirements
 Installation
 ------------
 
-Verify that you have installed, depending on your environment, [docker-compose][1] OR [postgresql][2].
+Verify that you have installed, depending on your environment, [docker-compose][1] OR [postgresql][2], npm, bower and nodejs.
 
 Verify that you have PHP installed : `sudo apt-get install php` on linux or, for windows, use php already included in [xampp][3].
 If you have Windows, do not forget to indicate in the environment variable PATH, 
@@ -48,6 +48,12 @@ $ git clone https://github.com/coyote333666/ppm ppm
 $ cd ppm/
 $ psql -f script.sql -U test
 (password test)
+```
+Install dependancies:
+
+```bash
+$ sudo bower install tableexport.js
+$ npm install jquery
 ```
 
 Then access the application in your browser at the given URL (localhost/ppm).

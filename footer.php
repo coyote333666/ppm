@@ -1,6 +1,5 @@
 <?php
 
-	echo('<br>');
 		if(((($currentPage-1)*$linesPerPage)+$linesPerPage) > $recCount[0]["Count"]["VALUE"])
 		{
 			$lineCount = $recCount[0]["Count"]["VALUE"]-(($currentPage-1)*$linesPerPage);
@@ -15,3 +14,7 @@
 
 	
 ?>
+<script>
+    var TabExp = document.getElementById('exptable');
+    $(TabExp).tableExport();	
+</script>

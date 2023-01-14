@@ -17,6 +17,7 @@
 	define("FILE_FUNCTION"			, "function.php");
 	define("FILE_BODY"				, "body.php");
 	define("FILE_FOOTER"			, "footer.php");
+	define("FILE_INDEX"				, "index.php");
 	define("PARAMETER_REDIRECTOR"	, "page=");
 	define("FILE_HEADER"			, "header.html");
 	define("PG_SERVER"				, "localhost");
@@ -26,16 +27,24 @@
 	define("PG_PORT"				, "5432");						
 	define("LOAD_START"				, microtime(true));
 
+	// JQuery
+	define("DIR_JQUERY"			, "node_modules/jquery/dist/");
+	define("FILE_JQUERY"			, DIR_JQUERY	. "jquery.min.js");
+
+	// TableExport.js
+	define("FILE_DIR_BOWER"		, "bower_components/");		
+	define("FILE_XLSX_JS"		, FILE_DIR_BOWER . "js-xlsx/dist/xlsx.full.min.js");	
+	define("FILE_FILESAVER_JS"	, FILE_DIR_BOWER . "file-saverjs/FileSaver.min.js");	
+	define("FILE_TABLEXPORT_JS"	, FILE_DIR_BOWER . "tableexport.js/dist/js/tableexport.min.js");	
+
+
 	$linesPerPage					= 5;
 	$currentPage					= 1;
 
-	if(isset($_GET["linesPerPage"]))	
+	if(!isset($_GET["oReset"]))
 	{
-		$linesPerPage	= $_GET["linesPerPage"];
-	}
-	if(isset($_GET["currentPage"]))		
-	{
-		$currentPage 	= $_GET["currentPage"];
+		if(isset($_GET["linesPerPage"]))					{	$linesPerPage 			= $_GET["linesPerPage"];			}
+		if(isset($_GET["currentPage"]))						{	$currentPage 				= $_GET["currentPage"];		}
 	}
 
 	require_once(FILE_FUNCTION);
@@ -60,7 +69,7 @@
 	
 	require(FILE_BODY);
 
-	echo(fncDisplayTable($_GET, $recordset, 'test'));
+	echo(fncDisplayTable($_GET, $recordset, 'test',FILE_INDEX, $linesPerPage));
 
 	require(FILE_FOOTER);
 	

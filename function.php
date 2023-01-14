@@ -295,8 +295,11 @@
 		return ($pagination);
 	}
 		
-	function fncDisplayTable($getParam, $pResult = array(), $pTitle = "")
+	function fncDisplayTable($getParam, $pResult = array(), $pTitle = "", $pFileIndex = "", $pLinesPerPage)
 	{
+		$table = "<p>"; 
+		$table .= "<table id='exptable' border='1px' cellpadding='0px' cellspacing='0px'>";
+
 		if(sizeof($pResult) > 0)
 		{
 			$colSpan = sizeof($pResult[0]);
@@ -305,19 +308,17 @@
 		{
 			$colSpan = 1;
 		}
-		
-		$table = "<p>"; 
-		$table .= "<table border='1px' cellpadding='0px' cellspacing='0px'>";
-		
+	
 		if(strlen($pTitle) > 0)
 		{
 			$table .= "<tr>";
 			$table .= "<th colspan='" . $colSpan . "'  	>" . $pTitle . "</th>";
 			$table .= "</tr>";
 		}
+		
 		if(sizeof($pResult))
 		{
-
+			
 			$table .= "<tr>";
 
 			$y=1;
@@ -340,9 +341,6 @@
 				
 				$table .= "</tr>";
 			}
-			
-			$table .= "</table>";
-			$table .= "</p>";
 		}
 		
 		else
@@ -354,6 +352,42 @@
 		
 		$table .= "</table>";
 		$table .= "</p>";
+
+		$table .= "<form method='get'>";
+		$table .= "Lines/page :";
+    $table .= "<input type='hidden' name='page' value='";
+		$table .=  $pFileIndex; 
+		$table .= "'>";
+		$table .= "<tr>
+		<td colspan='";
+		$table .= $colSpan;		
+		$table .= "'> <select name='linesPerPage'>";
+
+		$table .= "<option value='5'";
+		if($pLinesPerPage == 5) {$table .= " selected='selected'";} 
+		$table .= ">5 lines</option>";
+
+		$table .= "<option value='20'";
+		if($pLinesPerPage == 20) {$table .= " selected='selected'";} 
+		$table .= ">20 lines</option>";
+
+		$table .= "<option value='50'";
+		if($pLinesPerPage == 50) {$table .= " selected='selected'";} 
+		$table .= ">50 lines</option>";
+
+		$table .= "<option value='100'";
+		if($pLinesPerPage == 100) {$table .= " selected='selected'";} 
+		$table .= ">100 lines</option>";
+
+		$table .= "<option value='500'";
+		if($pLinesPerPage == 500) {$table .= " selected='selected'";} 
+		$table .= ">500 lines</option>";
+
+		$table .= "		</select>
+		<input type='Submit' name='oSubmit' value='Apply'>
+		</td>
+		</tr>";
+		$table .= "</form>";
 		
 		return($table);
 	}
