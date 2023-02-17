@@ -76,39 +76,24 @@
 	echo('</body>');
 	echo('</html>');
 ?>
-
 <script>
 		var TabExp = document.getElementById('exptable');
-    // **** jQuery **************************
-    //    $(TabExp).tableExport({
-    //        headers: true,
-    //        footers: true,
-    //        formats: ['xlsx', 'csv', 'txt'],
-    //        filename: 'id',
-    //        bootstrap: true,
-    //        position: 'bottom',
-    //        ignoreRows: null,
-    //        ignoreCols: null,
-    //        ignoreCSS: '.tableexport-ignore',
-    //        emptyCSS: '.tableexport-empty',
-    //        trimWhitespace: false,
-    //        RTL: false,
-    //        sheetname: 'id'
-    //    });
-    // **************************************
-    $(TabExp).tableExport({
-			headers: true,
-      footers: true,
-      formats: ['xlsx', 'csv', 'txt'],
-      filename: 'id',
-      bootstrap: false,
-      position: 'bottom',
-      ignoreRows: null,
-      ignoreCols: null,
-      ignoreCSS: '.tableexport-ignore',
-      emptyCSS: '.tableexport-empty',
-      trimWhitespace: false,
-      RTL: false,
-      sheetname: 'id'
-		});	
+    /* 
+        $(TabExp).tableExport({
+            headers: true,
+            footers: true,
+            formats: ['xlsx', 'csv', 'txt'],
+            filename: 'id',
+            bootstrap: true,
+            position: 'bottom',
+            ignoreRows: null,
+            ignoreCols: null,
+            ignoreCSS: '.tableexport-ignore',
+            emptyCSS: '.tableexport-empty',
+            trimWhitespace: false,
+            RTL: false,
+            sheetname: 'id'
+        });
+		*/
+    $(TabExp).tableExport();	
 </script>
