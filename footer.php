@@ -14,7 +14,3 @@
 
 	
 ?>
-<script>
-    var TabExp = document.getElementById('exptable');
-    $(TabExp).tableExport();	
-</script>

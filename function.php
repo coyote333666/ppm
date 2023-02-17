@@ -332,11 +332,11 @@
 			
 			for($y=0; $y<sizeof($pResult); $y++)
 			{
-				$table .= "<tr class='alternate''>";
+				$table .= "<tr class='alternate'>";
 				
 				foreach($pResult[$y] as $key => $value)
 				{
-					$table .= "<td>" . $pResult[$y][$key]['VALUE'] . "</td>";
+					$table .= "<td class='tableexport-string target'>" . $pResult[$y][$key]['VALUE'] . "</td>";
 				}
 				
 				$table .= "</tr>";
