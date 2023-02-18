@@ -36,6 +36,7 @@
 	define("FILE_XLSX_JS"		, FILE_DIR_BOWER . "js-xlsx/dist/xlsx.full.min.js");	
 	define("FILE_FILESAVER_JS"	, FILE_DIR_BOWER . "file-saverjs/FileSaver.min.js");	
 	define("FILE_TABLEXPORT_JS"	, FILE_DIR_BOWER . "tableexport.js/dist/js/tableexport.min.js");	
+	define("FILE_TABLEXPORT_CSS"	, FILE_DIR_BOWER . "tableexport.js/dist/css/tableexport.min.css");	
 
 
 	$linesPerPage					= 5;
@@ -95,5 +96,7 @@
             sheetname: 'id'
         });
 		*/
-    $(TabExp).tableExport();	
+    $(TabExp).tableExport({
+            bootstrap: true
+        });	
 </script>
