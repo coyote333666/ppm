@@ -20,7 +20,7 @@ Verify that you have PHP installed : `sudo apt-get install php` on linux or, for
 If you have Windows, do not forget to indicate in the environment variable PATH, 
 the path to access php.exe (for example, C:\xampp\php).
 
-run this command:
+run these linux commands:
 
 ```bash
 $ sudo su postgres
@@ -42,19 +42,18 @@ postgres$ ALTER USER test with password 'test';
 postgres$ REVOKE ALL ON DATABASE test FROM public;
 postgres$ GRANT ALL ON DATABASE test TO test;        
 postgres$ exit
-$ sudo adduser test
-$ sudo su test
-$ cd /home/test
-$ git clone https://github.com/coyote333666/ppm ppm
-$ cd ppm/
+$ cd /var/www/html
+$ sudo git clone https://github.com/coyote333666/ppm ppm
+$ cd ppm
 $ psql -f script.sql -U test
 (password test)
 ```
 Install dependancies:
 
 ```bash
+$ cd /var/www/html
 $ sudo bower install tableexport.js
-$ npm install jquery
+$ sudo npm install jquery
 ```
 
 Then access the application in your browser at the given URL (localhost/ppm).

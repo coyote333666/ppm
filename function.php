@@ -336,7 +336,7 @@
 				
 				foreach($pResult[$y] as $key => $value)
 				{
-					$table .= "<td class='tableexport-string target'>" . $pResult[$y][$key]['VALUE'] . "</td>";
+					$table .= "<td>" . $pResult[$y][$key]['VALUE'] . "</td>";
 				}
 				
 				$table .= "</tr>";
