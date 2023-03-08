@@ -52,8 +52,8 @@ Install dependancies:
 
 ```bash
 $ cd /var/www/html
+$ sudo bower install jquery-ui
 $ sudo bower install tableexport.js
-$ sudo npm install jquery
 ```
 
 Then access the application in your browser at the given URL (localhost/ppm).

@@ -28,7 +28,7 @@
 	define("LOAD_START"				, microtime(true));
 
 	// JQuery
-	define("DIR_JQUERY"			, "../node_modules/jquery/dist/");
+	define("DIR_JQUERY"			, "../bower_components/jquery/dist/");
 	define("FILE_JQUERY"			, DIR_JQUERY	. "jquery.min.js");
 
 	// TableExport.js
