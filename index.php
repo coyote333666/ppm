@@ -28,15 +28,15 @@
 	define("LOAD_START"				, microtime(true));
 
 	// JQuery
-	define("DIR_JQUERY"			, "../bower_components/jquery/dist/");
+	define("DIR_JQUERY"			, "../node_modules/jquery/dist/");
 	define("FILE_JQUERY"			, DIR_JQUERY	. "jquery.min.js");
 
 	// TableExport.js
-	define("FILE_DIR_BOWER"		, "../bower_components/");		
-	define("FILE_XLSX_JS"		, FILE_DIR_BOWER . "js-xlsx/dist/xlsx.full.min.js");	
-	define("FILE_FILESAVER_JS"	, FILE_DIR_BOWER . "file-saverjs/FileSaver.min.js");	
-	define("FILE_TABLEXPORT_JS"	, FILE_DIR_BOWER . "tableexport.js/dist/js/tableexport.min.js");	
-	define("FILE_TABLEXPORT_CSS"	, FILE_DIR_BOWER . "tableexport.js/dist/css/tableexport.min.css");	
+	define("FILE_DIR_NODE_MODULES"		, "../node_modules/");		
+	define("FILE_XLSX_JS"		, FILE_DIR_NODE_MODULES . "xlsx/dist/xlsx.full.min.js");	
+	define("FILE_FILESAVER_JS"	, FILE_DIR_NODE_MODULES . "file-saverjs/FileSaver.min.js");	
+	define("FILE_TABLEXPORT_JS"	, FILE_DIR_NODE_MODULES . "tableexport/dist/js/tableexport.min.js");	
+	define("FILE_TABLEXPORT_CSS"	, FILE_DIR_NODE_MODULES . "tableexport/dist/css/tableexport.min.css");	
 
 
 	$linesPerPage					= 5;
