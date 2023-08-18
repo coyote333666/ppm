@@ -97,6 +97,5 @@
         });
 		*/
     $(TabExp).tableExport({
-            bootstrap: true
         });	
 </script>
